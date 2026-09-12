@@ -18,26 +18,18 @@ function dibujarPersonaje(){
     ctx.fillStyle="#ff0000";
     ctx.fillRect(personajeX,canvas.height-(ALTURA_SUELO+ALTURA_PERSONAJE),ANCHO_PERSONAJE,ALTURA_PERSONAJE);
 }
-
 function moverIzquierda(){
     personajeX=personajeX-10;
     actualizarPantalla();
 }
-
 function moverDerecha(){
     personajeX=personajeX+10;
     actualizarPantalla();
 }
-
-
-
-
-
 function actualizarPantalla(){
     limpiarCanvas();
     dibujarSuelo();
     dibujarPersonaje();
-
 }
 function limpiarCanvas(){
     ctx.clearRect(0,0,canvas.width,canvas.height);
