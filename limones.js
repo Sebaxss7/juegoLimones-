@@ -13,9 +13,10 @@ let limonY=0
 let puntaje=0;
 let vidas=3;
 let velocidadCaida=200;
+let intervalo;
 
 function inicar(){
-    setInterval(bajarLimon,velocidadCaida);
+    intervalo=setInterval(bajarLimon,velocidadCaida);
     dibujarSuelo();
     dibujarPersonaje();
     aparecerLimon();
@@ -72,6 +73,7 @@ function detectarAtrapado(){
             velocidadCaida=100;
         } else if (puntaje === 10) {
             alert("¡TIENES LOS LIMONES! AHORA SOLO TE FALTA LA SAL Y EL TEQUILA 🍋🧂🍹 !");
+            clearInterval(intervalo);
         }
         aparecerLimon();
     }
@@ -88,9 +90,10 @@ function detectarPiso(){
     if(limonY + ALTURA_LIMON >= canvas.height - ALTURA_SUELO){
         vidas = vidas - 1;
         mostrarEnSpan("txtVidas", vidas);
-        if (vidas <= 0) {
+        if (vidas === 0) {
             alert("Game Over");
+            clearInterval(intervalo);
         }
-        aparecerLimon();
+            aparecerLimon();
+        }
     }
-}
