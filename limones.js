@@ -97,3 +97,15 @@ function detectarPiso(){
             aparecerLimon();
         }
     }
+
+function reiniciar(){
+    clearInterval(intervalo);
+    vidas = 3;
+    puntaje = 0;
+    velocidadCaida = 200;
+    personajeX = canvas.width / 2;
+    mostrarEnSpan("txtVidas", vidas);
+    mostrarEnSpan("txtPuntaje", puntaje);
+    actualizarPantalla();
+    inicar();
+}
