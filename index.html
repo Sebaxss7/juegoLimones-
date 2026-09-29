@@ -1,26 +1,140 @@
+```html
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Caza Limones</title>
- <link rel="stylesheet" href="limones.css"/>
- <script src="utils.js"></script>
+
+  <link rel="stylesheet" href="limones.css"/>
+  <script src="utils.js"></script>
 </head>
+
 <body onload="inicar()">
-  <div class="contenedor">
-    <h1>Atrapar Limones</h1>
-    <p>Si del cielo te caen limones ..... </p>
-    <h2>¡Aprende hacer limonada!</h2>
-    <canvas id="areaJuego" width="400" height="400"></canvas>
-    <div class="panel">
-      <p>Puntaje: <span id="txtPuntaje">0</span></p>
-      <p>Vidas: <span id="txtVidas">3</span></p>
-    </div>
-    <div class="botones">
-      <button onclick="moverIzquierda()">Izquierda</button>
-      <button onclick="moverDerecha()" >Derecha</button>
-      <button onclick="reiniciar()">Reiniciar</button>
-    </div>
-  </div>
- <script src="limones.js"></script>
+
+  <main class="contenedor">
+
+    <header class="encabezado">
+
+      <div class="etiqueta">
+        🍋 JUEGO DE REFLEJOS
+      </div>
+
+      <h1>Atrapar Limones</h1>
+
+      <p class="subtitulo">
+        Si del cielo te caen limones...
+      </p>
+
+      <h2>
+        ¡Aprende a hacer limonada!
+      </h2>
+
+    </header>
+
+
+    <section class="juego">
+
+      <div class="marco-canvas">
+
+        <div class="brillo"></div>
+
+        <canvas
+          id="areaJuego"
+          width="400"
+          height="400">
+        </canvas>
+
+      </div>
+
+
+      <div class="panel">
+
+        <div class="estadistica">
+
+          <span class="icono">
+            ⭐
+          </span>
+
+          <div>
+
+            <span class="etiqueta-estadistica">
+              PUNTAJE
+            </span>
+
+            <strong id="txtPuntaje">
+              0
+            </strong>
+
+          </div>
+
+        </div>
+
+
+        <div class="separador"></div>
+
+
+        <div class="estadistica">
+
+          <span class="icono">
+            ❤️
+          </span>
+
+          <div>
+
+            <span class="etiqueta-estadistica">
+              VIDAS
+            </span>
+
+            <strong id="txtVidas">
+              3
+            </strong>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="botones">
+
+        <button type="button" onclick="moverIzquierda()">
+          <span>◀</span>
+          Izquierda
+        </button>
+
+
+        <button type="button" onclick="moverDerecha()">
+          Derecha
+          <span>▶</span>
+        </button>
+
+
+        <button
+          type="button"
+          class="reiniciar"
+          onclick="reiniciar()">
+
+          ↻ Reiniciar
+
+        </button>
+
+      </div>
+
+
+      <p class="ayuda">
+        Usa los botones para mover al personaje y atrapar los limones.
+      </p>
+
+    </section>
+
+  </main>
+
+
+  <script src="limones.js"></script>
+
 </body>
 </html>
+```
