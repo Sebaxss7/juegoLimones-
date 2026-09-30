@@ -555,4 +555,21 @@ canvas {
   }
 
 }
-```
+
+.logo-limon {
+  width: 95px;
+  height: 95px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto 8px;
+
+  filter:
+    drop-shadow(0 0 8px rgba(183, 229, 50, 0.45))
+    drop-shadow(0 8px 12px rgba(0, 0, 0, 0.35));
+
+  transition: transform 0.3s ease;
+}
+
+.logo-limon:hover {
+  transform: scale(1.08) rotate(-5deg);
+}
