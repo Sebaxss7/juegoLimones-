@@ -22,11 +22,11 @@ function inicar(){
     aparecerLimon();
 }
 function dibujarSuelo(){
-    ctx.fillStyle="#55f724bb";
+    ctx.fillStyle="#f78400bb";
     ctx.fillRect(0,canvas.height-ALTURA_SUELO,canvas.width,ALTURA_SUELO);
 }
 function dibujarPersonaje(){
-    ctx.fillStyle="#ff0000";
+    ctx.fillStyle="#0308ff";
     ctx.fillRect(personajeX,canvas.height-(ALTURA_SUELO+ALTURA_PERSONAJE),ANCHO_PERSONAJE,ALTURA_PERSONAJE);
 }
 function moverIzquierda(){
@@ -91,7 +91,7 @@ function detectarPiso(){
         vidas = vidas - 1;
         mostrarEnSpan("txtVidas", vidas);
         if (vidas === 0) {
-            alert("Game Over");
+            alert("JUEGO TERMINADO, PERDISTE 😢");
             clearInterval(intervalo);
         }
             aparecerLimon();
@@ -108,4 +108,8 @@ function reiniciar(){
     mostrarEnSpan("txtPuntaje", puntaje);
     actualizarPantalla();
     inicar();
+}
+
+function desaparecerPersonaje(){
+    ctx.clearRect(personajeX,canvas.height-(ALTURA_SUELO+ALTURA_PERSONAJE),ANCHO_PERSONAJE,ALTURA_PERSONAJE);
 }
